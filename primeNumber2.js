@@ -7,7 +7,6 @@ function primo(num) {
     return num !== 1;
 }
 
-for (let i = 1; i < 10; i++) {
-    var resultado = primo(i);
-    console.log(`${i} é primo? ${resultado}`);
+for(var i = 0; i < 10; i++){
+    console.log(`${i} - ${testIfPrime(i)}`);
 }

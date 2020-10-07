@@ -8,11 +8,13 @@ function testIfPrime(n) {
     }
 
     if (quantity == 2) {
-        return console.log("Primo");
+        return "Primo";
     }
     else {
-        return console.log("Não Primo");
+        return "Não Primo";
     }
 }
 
-testIfPrime(3);
+for(var i = 0; i < 10; i++){
+    console.log(`${i} - ${testIfPrime(i)}`);
+}
