@@ -17,27 +17,27 @@ const fibonacci = (n) => {
 	for (let i = 2; i < n; i++) {
 		arr.push(arr[i - 2] + arr[i - 1])
 	}
-	return arr;
+	return arr.slice(0, n);
 }
 
 
 console.log(" ");
 console.log("Primeira sequência: ")
-var firstSequence = fibonacci(10);
+var firstSequence = fibonacci(1);
 console.log(arrayToString(firstSequence));
 
 
 console.log(" ");
 console.log("Sequência modificada")
-var modifiedSequence = fibonacci(10);
+var modifiedSequence = fibonacci(3);
 console.log(arrayToString(modifiedSequence));
 
 
 console.log(" ");
 console.log("Sequência crescente")
-const init = 5;
+const init = 6;
 const end = 10;
-for (let i = init; i < end; i++) {
+for (let i = init; i <= end; i++) {
 	var ithSequence = fibonacci(i);
 	console.log(`Sequência #${i}: ${arrayToString(ithSequence)}`);
 }
