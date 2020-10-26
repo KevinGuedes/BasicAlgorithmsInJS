@@ -21,6 +21,11 @@ const fibonacci = (n) => {
 }
 
 
+console.log("Primeira sequência: ")
+var firstSequence = fibonacci(10);
+printArray(firstSequence);
 
 
-printArray(fibonacci(10));
+console.log("Sequência modificada")
+var modifiedSequence = fibonacci(10);
+printArray(modifiedSequence);
