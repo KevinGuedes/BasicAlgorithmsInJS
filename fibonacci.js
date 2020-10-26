@@ -23,13 +23,13 @@ const fibonacci = (n) => {
 
 console.log(" ");
 console.log("Primeira sequência: ")
-var firstSequence = fibonacci(1);
+var firstSequence = fibonacci(10);
 console.log(arrayToString(firstSequence));
 
 
 console.log(" ");
 console.log("Sequência modificada")
-var modifiedSequence = fibonacci(3);
+var modifiedSequence = fibonacci(10);
 console.log(arrayToString(modifiedSequence));
 
 
