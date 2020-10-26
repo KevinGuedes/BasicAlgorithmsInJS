@@ -1,37 +1,26 @@
-function fibonacciRecursive(n) {
-	if (n < 2) {
-		return n;
+const printArray = (arr) => {
+	sequence = "";
+	for (let i = 0; i < arr.length; i++) {
+		if (i < arr.length - 1) {
+			sequence += `${arr[i]} `;
+		}
+		else {
+			sequence += `${arr[i]}`;
+		}
 	}
-	else {
-		return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+	console.log(sequence);
+}
+
+
+const fibonacci = (n) => {
+	let arr = [0, 1];
+	for (let i = 2; i < n; i++) {
+		arr.push(arr[i - 2] + arr[i - 1])
 	}
+	return arr
 }
 
-var n = 10;
-var serie = "";
-console.log(`Apresentação dos ${n} primeiros termo(s) da série de Fibonacci (Abordagem Recursiva):`)
-for (var i = 0; i < n; i++) {
-	serie += `${fibonacciRecursive(i)} `;
-}
-console.log(serie)
 
 
 
-function fibonacci(n) {
-	var i = 0, j = 1, t;
-	for (var k = 1; k < n; k++) {
-		t = i + j;
-		i = j;
-		j = t;
-	}
-	return i;
-}
-
-var n = 5;
-var serie = "";
-console.log(`Apresentação dos ${n} primeiros termo(s) da série de Fibonacci (Abordagem Iterativa):`)
-for (var i = 1; i <= n; i++) {
-	serie += `${fibonacci(i)} `;
-}
-console.log(serie)
-
+printArray(fibonacci(10));
