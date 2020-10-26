@@ -1,4 +1,4 @@
-const printArray = (arr) => {
+const arrayToString = (arr) => {
 	sequence = "";
 	for (let i = 0; i < arr.length; i++) {
 		if (i < arr.length - 1) {
@@ -8,7 +8,7 @@ const printArray = (arr) => {
 			sequence += `${arr[i]}`;
 		}
 	}
-	console.log(sequence);
+	return sequence;
 }
 
 
@@ -21,11 +21,23 @@ const fibonacci = (n) => {
 }
 
 
+console.log(" ");
 console.log("Primeira sequência: ")
 var firstSequence = fibonacci(10);
-printArray(firstSequence);
+console.log(arrayToString(firstSequence));
 
 
+console.log(" ");
 console.log("Sequência modificada")
 var modifiedSequence = fibonacci(10);
-printArray(modifiedSequence);
+console.log(arrayToString(modifiedSequence));
+
+
+console.log(" ");
+console.log("Sequência crescente")
+const init = 5;
+const end = 10;
+for (let i = init; i < end; i++) {
+	var ithSequence = fibonacci(i);
+	console.log(`Sequência #${i}: ${arrayToString(ithSequence)}`);
+}
