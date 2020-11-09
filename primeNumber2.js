@@ -7,6 +7,6 @@ function primo(num) {
     return num !== 1;
 }
 
-for(var i = 0; i < 123; i++){
-    console.log(`O número ${i} é Primo? ` + primo(i) ? "Sim" : "Não");
+for(var i = 1; i < 10; i++){
+    console.log(`O número ${i} é Primo? ${primo(i) ? "Sim" : "Não"}`);
 }
