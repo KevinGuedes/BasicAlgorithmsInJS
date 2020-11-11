@@ -1,25 +1,25 @@
-function troca(vetor, indexEsquerda, indexDireita) {
-    var temp = vetor[indexEsquerda];
-    vetor[indexEsquerda] = vetor[indexDireita];
-    vetor[indexDireita] = temp;
+function swap(arr, leftIndex, rightIndex) {
+    var temp = arr[leftIndex];
+    arr[leftIndex] = arr[rightIndex];
+    arr[rightIndex] = temp;
 }
 
-function particao(vetor, ponteiroEsquerda, ponteiroDireita) {
-    var meio = vetor[Math.floor((ponteiroDireita + ponteiroEsquerda) / 2)];
-    var i = ponteiroEsquerda;
-    var j = ponteiroDireita;
+function partition(arr, leftPointer, rightPointer) {
+    var pivot = arr[Math.floor((rightPointer + leftPointer) / 2)];
+    var i = leftPointer;
+    var j = rightPointer;
 
     while (i <= j) {
 
-        while (vetor[i] < meio) {
+        while (arr[i] < pivot) {
             i++
         }
-        while (vetor[j] > meio) {
+        while (arr[j] > pivot) {
             j--;
         }
 
         if (i <= j) {
-            troca(vetor, i, j);
+            swap(arr, i, j);
             i++;
             j--;
         }
@@ -29,34 +29,34 @@ function particao(vetor, ponteiroEsquerda, ponteiroDireita) {
 }
 
 
-function quickSort(vetor, ponteiroEsquerda, ponteiroDireita) {
+function getQuickSortedArray(arr, leftPointer, rightPointer) {
     var index;
-    if (vetor.length > 1) {
+    if (arr.length > 1) {
 
-        index = particao(vetor, ponteiroEsquerda, ponteiroDireita);
+        index = partition(arr, leftPointer, rightPointer);
 
-        if (ponteiroEsquerda < index - 1) {
-            quickSort(vetor, ponteiroEsquerda, index - 1);
+        if (leftPointer < index - 1) {
+            getQuickSortedArray(arr, leftPointer, index - 1);
         }
 
-        if (index < ponteiroDireita) {
-            quickSort(vetor, index, ponteiroDireita);
+        if (index < rightPointer) {
+            getQuickSortedArray(arr, index, rightPointer);
         }
     }
 
-    return vetor;
+    return arr;
 }
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-var vetor = new Array(10);
-for (var i = 0; i < vetor.length; i++) {
-    vetor[i] = getRndInteger(0, 50);
+var arr = new Array(10);
+for (var i = 0; i < arr.length; i++) {
+    arr[i] = getRndInteger(0, 50);
 }
 
-console.log(`Vetor original: [${vetor}]`);
-console.log(`Vetor ordenado: [${quickSort(vetor, 0, vetor.length - 1)}]`);
+console.log(`Vetor original: [${arr}]`);
+console.log(`Vetor ordenado: [${getQuickSortedArray(arr, 0, arr.length - 1)}]`);
 
 

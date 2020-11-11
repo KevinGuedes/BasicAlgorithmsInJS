@@ -11,9 +11,13 @@ for (var i = 0; i < group.length; i++) {
 
 console.log(group);
 
-var sum = 0;
-group.forEach(element => {
-    sum += element;
-});
 
-console.log(`Somatório = ${sum}`);
+const getSum = (arr) => {
+    var sum = 0;
+    arr.forEach(element => {
+        sum += element;
+    });
+    return sum;
+};
+
+console.log(`Somatório = ${getSum(group)}`);
